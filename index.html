@@ -33,8 +33,13 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
-      
 
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -54,11 +59,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/New folder.loader.js";
+      var loaderUrl = buildUrl + "/dispose.loader.js";
       var config = {
-        dataUrl: buildUrl + "/New folder.data.unityweb",
-        frameworkUrl: buildUrl + "/New folder.framework.js.unityweb",
-        codeUrl: buildUrl + "/New folder.wasm.unityweb",
+        dataUrl: buildUrl + "/dispose.data.unityweb",
+        frameworkUrl: buildUrl + "/dispose.framework.js.unityweb",
+        codeUrl: buildUrl + "/dispose.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "vrdev",
         productName: "Gather",
